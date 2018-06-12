@@ -1,0 +1,22 @@
+---
+# vars file for setup-mysql-backups
+
+#####     Required Variables      #####
+# Uncomment these and fill in appropriate values unless passing from a higher precedence
+
+# List of databases to backup
+dbs_to_backup: 
+  - "business"
+
+# MySQL / MariaDB root password
+mysql_root_password: ""
+
+
+
+#####     Optional Variables      #####
+
+# These variables are set with the below defaults in defaults/main.yml. 
+# Only change them or pass values if you would like
+
+# Number of DB Backups to keep
+#num_db_backups_to_keep: 30
