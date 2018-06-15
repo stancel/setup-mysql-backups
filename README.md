@@ -12,20 +12,18 @@ Role Variables
 --------------
 
 List of databases to backup
-
-`
-		dbs_to_backup: 
-		  - "business"
-`
-
+```
+	dbs_to_backup: 
+	  - "business"
+```
 MySQL / MariaDB / Percona Server root password
-
-		`mysql_root_password: "your password here"``
-
+```
+	mysql_root_password: "your password here"
+```
 Number of DB Backups to keep
-
-		`num_db_backups_to_keep: 30`
-
+```
+	num_db_backups_to_keep: 30
+```
 
 Dependencies
 ------------
