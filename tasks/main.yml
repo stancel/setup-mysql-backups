@@ -45,12 +45,12 @@
     - debug:
         msg: "MySQL root password is {{ data.stdout | regex_search('((?:[a-z0-9]+[a-z0-9]*[0-9]+[a-z0-9]*))') }}"
 
-    - name: "Setting a 'fact' / variable from the filtered registered variable into the mysql_root_password variable"
+    - name: "Setting a 'fact' / variable from the filtered registered variable into the setup_mysql_backups_mysql_root_password variable"
       set_fact:
         mysql_root_password: "{{ data.stdout | regex_search('((?:[a-z0-9]+[a-z0-9]*[0-9]+[a-z0-9]*))') }}"
 
     - debug:
-        msg: "MySQL PW =  {{ mysql_root_password }}"
+        msg: "MySQL PW =  {{ setup_mysql_backups_mysql_root_password }}"
 
   # Only execute if a DigitalOcean Lamp Stack was used 
   when: stat_result.stat.exists == True 

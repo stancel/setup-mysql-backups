@@ -9,16 +9,16 @@
 
 ### MySQL Server Login Info ###
 MUSER="root"
-MPASS="{{ mysql_root_password }}"
+MPASS="{{ setup_mysql_backups_mysql_root_password }}"
 MHOST="localhost"
 MYSQL="$(which mysql)"
 MYSQLDUMP="$(which mysqldump)"
 DESTINATION="/backups/mysql"
 GZIP="$(which gzip)"
-declare -i NUM_BACKUPS_TO_KEEP={{ num_db_backups_to_keep }}
+declare -i NUM_BACKUPS_TO_KEEP={{ setup_mysql_backups_num_db_backups_to_keep }}
 NOW=$(date +"%m-%d-%Y")
 ### Space separated list of all databases to backup
-DBS_TO_BACKUP={% for db in dbs_to_backup %}{{ db }}{% if not loop.last %} {% endif %}{% endfor %}
+DBS_TO_BACKUP={% for db in setup_mysql_backups_dbs_to_backup %}{{ db }}{% if not loop.last %} {% endif %}{% endfor %}
 
 ### FTP SERVER Login info ###
 #FTPU="FTP-SERVER-USER-NAME"

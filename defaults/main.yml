@@ -2,5 +2,5 @@
 # defaults file for setup-mysql-backups
 
 # Number of DB Backups to keep
-num_db_backups_to_keep: 30
+setup_mysql_backups_num_db_backups_to_keep: 30
 

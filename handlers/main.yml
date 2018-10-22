@@ -2,5 +2,7 @@
 # handlers file for setup-mysql-backups
 
 - name: restart-mysql-server
-  service: name=mysql state=restarted
+  service: 
+    name: mysql 
+    state: restarted
 
