@@ -58,7 +58,3 @@ cp -p `ls -dtr1 ${DESTINATION}/*.gz | tail -1` ${DESTINATION}/current/
 ### THEN PASTE THIS IN:
 ## BRAD EDIT - Backing Up the MySQL DB Every Night
 #@midnight /root/backup_mysql_databases.sh >/dev/null 2>&1
-
-
-
-

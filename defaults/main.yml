@@ -3,4 +3,3 @@
 
 # Number of DB Backups to keep
 setup_mysql_backups_num_db_backups_to_keep: 30
-

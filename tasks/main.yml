@@ -6,8 +6,11 @@
   register: is_ufw_installed
   ignore_errors: yes
 
-- debug: msg="{{ is_ufw_installed.rc }}" 
-- debug: var=is_ufw_installed
+- debug: 
+    msg: "{{ is_ufw_installed.rc }}" 
+
+- debug: 
+    var: is_ufw_installed
 
 - name: "Open port 3306 in Ubuntu Firewall to allow external MySQL connections"
   ufw: 
@@ -36,7 +39,8 @@
         src: /root/.digitalocean_password
       register: slurpfile
 
-    - debug: msg="MySQL root password is {{ slurpfile['content'] | b64decode }}"
+    - debug: 
+        msg: "MySQL root password is {{ slurpfile['content'] | b64decode }}"
 
     - name: "Retrieving MySQL root password"
       shell: cat /root/.digitalocean_password
@@ -53,7 +57,7 @@
         msg: "MySQL PW =  {{ setup_mysql_backups_mysql_root_password }}"
 
   # Only execute if a DigitalOcean Lamp Stack was used 
-  when: stat_result.stat.exists == True 
+  when: stat_result.stat.exists
 
 - name: "Deploying DB backup script to server"
   template:
@@ -77,4 +81,3 @@
     month: "*"
     weekday: "*"
     job: "/root/backup_mysql_databases.sh > /dev/null 2>&1"
-

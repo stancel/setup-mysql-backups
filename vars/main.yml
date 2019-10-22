@@ -11,7 +11,6 @@ setup_mysql_backups_dbs_to_backup:
 # MySQL / MariaDB root password
 setup_mysql_backups_mysql_root_password: ""
 
-
 #####     Optional Variables      #####
 
 # These variables are set with the below defaults in defaults/main.yml. 
